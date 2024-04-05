@@ -1,0 +1,70 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(954, 640)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.btn_dir = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_dir.setGeometry(QtCore.QRect(20, 10, 181, 41))
+        self.btn_dir.setObjectName("btn_dir")
+        self.list_files = QtWidgets.QListWidget(self.centralwidget)
+        self.list_files.setGeometry(QtCore.QRect(20, 60, 181, 571))
+        self.list_files.setObjectName("list_files")
+        self.image = QtWidgets.QLabel(self.centralwidget)
+        self.image.setGeometry(QtCore.QRect(210, 10, 541, 611))
+        self.image.setObjectName("image")
+        self.btn_left = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_left.setGeometry(QtCore.QRect(770, 30, 181, 41))
+        self.btn_left.setObjectName("btn_left")
+        self.btn_right = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_right.setGeometry(QtCore.QRect(770, 80, 181, 41))
+        self.btn_right.setObjectName("btn_right")
+        self.mirror_1 = QtWidgets.QPushButton(self.centralwidget)
+        self.mirror_1.setGeometry(QtCore.QRect(770, 130, 181, 41))
+        self.mirror_1.setObjectName("mirror_1")
+        self.btn_bw = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_bw.setGeometry(QtCore.QRect(770, 180, 181, 41))
+        self.btn_bw.setObjectName("btn_bw")
+        self.btn_contrast = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_contrast.setGeometry(QtCore.QRect(770, 230, 181, 41))
+        self.btn_contrast.setObjectName("btn_contrast")
+        self.btn_blur = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_blur.setGeometry(QtCore.QRect(770, 280, 181, 41))
+        self.btn_blur.setObjectName("btn_blur")
+        self.btn_1 = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_1.setGeometry(QtCore.QRect(770, 330, 181, 41))
+        self.btn_1.setText("")
+        self.btn_1.setObjectName("btn_1")
+        self.btn_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_2.setGeometry(QtCore.QRect(770, 380, 181, 41))
+        self.btn_2.setText("")
+        self.btn_2.setObjectName("btn_2")
+        MainWindow.setCentralWidget(self.centralwidget)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "Редактор фото"))
+        self.btn_dir.setText(_translate("MainWindow", "Папка"))
+        self.image.setText(_translate("MainWindow", "Картинка"))
+        self.btn_left.setText(_translate("MainWindow", "Поворот вліво"))
+        self.btn_right.setText(_translate("MainWindow", "Поворот вправо"))
+        self.mirror_1.setText(_translate("MainWindow", "Дзеркально зліва направо"))
+        self.btn_bw.setText(_translate("MainWindow", "Чорно-біла"))
+        self.btn_contrast.setText(_translate("MainWindow", "Контраст"))
+        self.btn_blur.setText(_translate("MainWindow", "Блюр"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
